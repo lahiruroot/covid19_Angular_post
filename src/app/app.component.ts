@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { PostsService } from './posts.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'covid';
+  data:any;
+  constructor(private postData:PostsService){}
+  ngOnInit(){
+   this.postData.getPost().subscribe((result)=>{
+      console.warn("result",result)
+      this.data=result
+   })
+  }
+
 }
