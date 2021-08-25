@@ -6,7 +6,6 @@ import { PostsService } from './posts.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'covid';
   data:any;
   constructor(private postData:PostsService){}
   ngOnInit(){
